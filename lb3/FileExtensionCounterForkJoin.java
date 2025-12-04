@@ -101,7 +101,7 @@ class TimeMeasureResult {
         this.nanos = nanos;
     }
 
-    public long getValue() {
+    public long getResult() {
         return value;
     }
 
@@ -151,7 +151,7 @@ public class FileExtensionCounterForkJoin {
         TimeMeasureResult result = runner.run(counter, rootDir, ext);
 
         System.out.println("\n=== Результат ===");
-        System.out.println("Кількість знайдених файлів: " + result.getValue());
+        System.out.println("Кількість знайдених файлів: " + result.getResult());
         System.out.printf("Час виконання: %.3f ms (%d ns)%n",
                 result.getMillis(), result.getNanos());
     }
