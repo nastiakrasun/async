@@ -149,6 +149,12 @@ public class Main {
                     // Пауза імітує навігацію сайтом
                     Thread.sleep(150 + rnd.nextInt(200));
 
+                    if (!store.isOpen()) {
+                        log(name, "WAITING (store closed)");
+                        Thread.sleep(300); // чекаємо відкриття
+                        continue;
+                    }
+                    
                     // Спроба купити: якщо дефіцит — швидко тайм-аутимося
                     boolean ok = p.tryBuy(200);
                     if (ok) {
